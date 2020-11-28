@@ -1,3 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spekt8
+  labels:
+    app: spekt8
+spec:
+  ports:
+    - port: 3000
+      nodePort: 30219
+      targetPort: spekt8
+  selector:
+    component: spekt8
+  type: NodePort
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
